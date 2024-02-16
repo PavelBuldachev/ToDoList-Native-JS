@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <link rel="stylesheet" href="./stylesheets/index.css">
+    <title>ToDo Native JS</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="app">
+            <header class="header">
+                <div class="container">
+                    <h1 class="title">Список задач</h1>
+                    <nav class="filter">
+                        <a id="allTasks" href="#">Все задачи</a>
+                        <a id="activeTasks" href="#">Активные</a>
+                        <a id="completedTasks" href="#">Выполненные</a>
+                    </nav>
+                </div>
+            </header>
+            <main class="main">
+                <div class="container">
+                    <div class="btn-wrapper">
+                        <button class="add-btn" onclick="showPopup()">+ Добавить задачу</button>
+                    </div>
+                    <div id="tasksContainer" class="tasks-container"></div>
+                </div>
+            </main>
+        </div>
+        <div id="overlay" class="overlay" style="display: none;">
+            <div class="popup">
+                <div class="top">
+                    <div class="popup-container">
+                        <h2>Новая задача</h2>
+                    </div>
+                </div>
+                <div class="popup-container">
+                    <input type="text" placeholder="Заголовок новой задачи">
+                    <input type="text" placeholder="Описание новой задачи">
+                    <div class="popup-buttons">
+                        <button class="cancel-btn" onclick="hidePopup()">Отменить</button>
+                        <button class="save-btn" onclick="saveTask()">Добавить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/overlay.js"></script>
+    <script src="./js/saveTask.js"></script>
+    <script src="./js/filter.js"></script>
+    <script src="./js/loadTasks.js"></script>
+</body>
+</html>
